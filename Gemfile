@@ -14,3 +14,4 @@ gem 'erubis' # for automatic escaping of HTML
 gem 'actionpack' # for Rails form helpers
 
 gem "market_beat"
+gem "table_print", "~> 1.0.0"
