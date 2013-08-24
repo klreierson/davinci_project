@@ -1,0 +1,35 @@
+<div id="mainContent">
+	<h1>My Profile</h1>
+
+		First Name
+		<%== text_field_tag :first_name, @profile.first_name %><br>
+
+		Last Name
+		<%== text_field_tag :last_name, @profile.last_name %><br>
+
+		City
+		<%== text_field_tag :city, @profile.city %><br>
+
+		State
+		<%== text_field_tag :state, @profile.state %><br>
+
+		Country
+		<%== text_field_tag :country, @profile.country %><br>
+
+		Trading Style
+		<%== select_tag :trading_style, options_for_select(
+		["Long Term","Short Term", "Intraday", "Momentum", "Value"], nil), prompt: "" %>
+		<br>
+
+		Favorite Sector
+		<%== select_tag :fav_sector, options_for_select(
+		["Technology", "Energy","Financials", "Consumer Staples", "Consumer Discretionary", "Health Care","Utilies", "Industrials"], nil), prompt: "" %>
+
+		<p>
+			<%== submit_tag "Save" %>
+		</p>
+</div>
+
+
+
+

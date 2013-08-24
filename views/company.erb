@@ -1,0 +1,52 @@
+<div id="mainContent">
+	<div id="companyTitle">
+			<h2><%= @name %> - <%= @symbol %></h2>
+			<p> Last Price:  $<%= @price %></p>
+			<p> <%= @trade_timestamp %> </p>
+		</div>
+
+		<div id="priceInfo">
+			<% if @change[0].to_f < 0 %>
+				<span style= 'color:red'>Price Change <%= @change[0] %></span>
+			<% else @change[0].to_f > 0 %>
+				<span style= 'color:green'>Price Change <%= @change[0] %></span>
+			<% end %>
+			<% if @change[1].to_f < 0 %>
+				<span style= 'color:red'> (<%= @change[1] %>)</span>
+			<% else @change[1].to_f > 0 %>
+				<span style= 'color:green'> <%= @change[1] %></span>
+			<% end %>
+		</div>
+
+		<figure class="freezeframe-container">
+			<img src="img/jonah.gif" freezeframe />
+			<br>(hover to play clip)
+		</figure>
+
+		<div id="chart">
+			<img src="http://app.quotemedia.com/quotetools/getChart.go?webmasterId=500&chtype=AreaChart&symbol=<%= params[:symbol]%>&chmrg=3&chscale=1d&chwid=200&chhig=200&chsym=<%= params[:symbol]%>Intraday">
+		</div>
+
+		<table border="1" width="100%" margin="0" text-align:"center" >
+	  		<tr>
+	    		<th>Key Stock Data</th>
+	  		</tr>
+	  		<tr>
+			    <td>Stock Exchange</td>
+			    <td>Volume</td>
+				<td>Days Range</td>
+				<td>Market Cap (billions)</td>
+				<td>EPS</td>
+				<td>P/E Ratio</td>
+			  </tr>
+			  <tr>
+			    <td><%= @stock_exchange %></td>
+			    <td><%= @volume %></td>
+				<td><%= @days_range[0] %> - <%= @days_range[1] %></td>
+				<td><%= @market_cap %></td>
+				<td><%= @eps %></td>
+				<td><%= @pe %></td>
+		  </tr>
+		</table>
+	<br>
+</div>
