@@ -96,7 +96,7 @@ GEM
     thor (0.18.1)
     tilt (1.4.1)
     tzinfo (0.3.37)
-    yard (0.8.6.2)
+    yard (0.9.25)
 
 PLATFORMS
   ruby
